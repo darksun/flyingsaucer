@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PDF as Image Testing</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0"/>
+    <style>
+
+        body {
+            justify-content: center;
+        }
+
+        .container {
+            border: 1px solid #ccc;
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @media print {
+            .pagebreak { page-break-before: always; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="classpath:images/0deg.pdf" alt="Test PDF Rotation 0" title="file:format:PDF" />
+    </div>
+    <div class="pagebreak"></div>
+    <div class="container">
+        <img src="classpath:images/90deg.pdf" alt="Test PDF Rotation 90" title="file:format:PDF" />
+    </div>
+    <div class="pagebreak"></div>
+    <div class="container">
+        <img src="classpath:images/180deg.pdf" alt="Test PDF Rotation 180" title="file:format:PDF" />
+    </div>
+    <div class="pagebreak"></div>
+    <div class="container">
+        <img src="classpath:images/270deg.pdf" alt="Test PDF Rotation 270" title="file:format:PDF" />
+    </div>
+    <div class="pagebreak"></div>
+    <div class="container">
+        <img src="classpath:images/90deg.png" alt="Test PNG" title="file:format:PNG" />
+    </div>
+</body>
+
+</html>

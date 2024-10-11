@@ -49,6 +49,14 @@ public class PDFRenderTest {
                 "THE END");
     }
 
+    @Test
+    public void pdfsAsImage() throws IOException, DocumentException {
+        URL source = requireNonNull(Thread.currentThread().getContextClassLoader().getResource("images.html"));
+        File output = new File("target/flying-saucer-pdfs-as-images.pdf");
+        PDF pdf = generatePDF(source, output);
+        assertThat(pdf).doesNotContainText("foobar");
+    }
+
     private static PDF generatePDF(URL source, File output) throws IOException, DocumentException {
         Document doc = XMLResource.load(source).getDocument();
 
